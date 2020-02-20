@@ -1,41 +1,41 @@
 /*
-DEMOËµÃ÷£º
+DEMOè¯´æ˜ï¼š
 {
 
-	MENU projectÊÇÎªÁË¼òµ¥¿ìËÙµÄ´´½¨Ò»·İconsoleÊ÷×´²Ëµ¥¶ø±àĞ´µÄ¿â
-	½ö°üº¬menu.cºÍmenu.hÎÄ¼ş ÇëÊ¹ÓÃ#include "menu.h"
-	Êı¾İ½á¹¹ËµÃ÷:
+	MENU projectæ˜¯ä¸ºäº†ç®€å•å¿«é€Ÿçš„åˆ›å»ºä¸€ä»½consoleæ ‘çŠ¶èœå•è€Œç¼–å†™çš„åº“
+	ä»…åŒ…å«menu.cå’Œmenu.hæ–‡ä»¶ è¯·ä½¿ç”¨#include "menu.h"
+	æ•°æ®ç»“æ„è¯´æ˜:
 	{
-		- one_option Ñ¡ÏîÀàĞÍ
-		- one_option[] Ñ¡ÏîÊı×é
-		- menu ²Ëµ¥ÀàĞÍ
+		- one_option é€‰é¡¹ç±»å‹
+		- one_option[] é€‰é¡¹æ•°ç»„
+		- menu èœå•ç±»å‹
 	}
-	º¯ÊıËµÃ÷:
+	å‡½æ•°è¯´æ˜:
 	{
-		¹¹Ôìº¯Êı:
+		æ„é€ å‡½æ•°:
 		{
-			- mk_option(char* Ñ¡ÏîÎÄ±¾, (int*)¹¦ÄÜº¯Êı());ÓÃÓÚ¹¹ÔìÒ»¸öone_option ¶ÔÏó
-			- mk_menu(char* ²Ëµ¥Ãû³Æ, char* ²Ëµ¥ËµÃ÷,menu* NULL , one_option* Ñ¡ÏîÁĞ±í, int Ñ¡Ïî¸öÊı, boolean ÊÇ·ñ¿ÉÒÔ·µ»ØÉÏ²ã²Ëµ¥);ÓÃÓÚ¹¹ÔìÒ»¸ömenu¶ÔÏó
-			- link_menu2option(one_option* Ñ¡Ïî¶ÔÏó, ²Ëµ¥¶ÔÏó); ÓÃÓÚ½«Ò»¸ömenu¶ÔÏóÁ´½ÓÎªÒ»¸öoption¶ÔÏóµÄÏÂ¼¶menu
+			- mk_option(char* é€‰é¡¹æ–‡æœ¬, (int*)åŠŸèƒ½å‡½æ•°());ç”¨äºæ„é€ ä¸€ä¸ªone_option å¯¹è±¡
+			- mk_menu(char* èœå•åç§°, char* èœå•è¯´æ˜,menu* NULL , one_option* é€‰é¡¹åˆ—è¡¨, int é€‰é¡¹ä¸ªæ•°, boolean æ˜¯å¦å¯ä»¥è¿”å›ä¸Šå±‚èœå•);ç”¨äºæ„é€ ä¸€ä¸ªmenuå¯¹è±¡
+			- link_menu2option(one_option* é€‰é¡¹å¯¹è±¡, èœå•å¯¹è±¡); ç”¨äºå°†ä¸€ä¸ªmenuå¯¹è±¡é“¾æ¥ä¸ºä¸€ä¸ªoptionå¯¹è±¡çš„ä¸‹çº§menu
 		}
-		Ö´ĞĞº¯Êı:
+		æ‰§è¡Œå‡½æ•°:
 		{
-			- modify_system_speaker(char* ÏµÍ³ÌáÊ¾×Ô³Æ);ÓÃÓÚÔÚÌáÊ¾´¦×÷ÎªÌáÊ¾±êÊ¶
-			- start(menu* ²Ëµ¥¶ÔÏó);ÓÃÓÚÆô¶¯²Ëµ¥ Èô²Ëµ¥Õı³£½áÊø½«ÒÔ 0 Îª·µ»ØÖµ
+			- modify_system_speaker(char* ç³»ç»Ÿæç¤ºè‡ªç§°);ç”¨äºåœ¨æç¤ºå¤„ä½œä¸ºæç¤ºæ ‡è¯†
+			- start(menu* èœå•å¯¹è±¡);ç”¨äºå¯åŠ¨èœå• è‹¥èœå•æ­£å¸¸ç»“æŸå°†ä»¥ 0 ä¸ºè¿”å›å€¼
 		}
 	}
-	¹æ·¶ËµÃ÷:
+	è§„èŒƒè¯´æ˜:
 	{
-		ÈôÏ£Íû¸øÒ»¸ö option¶ÔÏóÖ¸¶¨Ò»¸ö¹¦ÄÜº¯Êı,ÇëÒÔÒ»ÏÂ¸ñÊ½±àĞ´¸Ãº¯Êı,Èô²»Ï£ÍûÖ´ĞĞÒ»¸ö¹¦ÄÜº¯Êı£¬ÇëÔÚ¹¹Ôì¸Ãoption¶ÔÏóÊ±½«Æä¹¦ÄÜº¯ÊıÖ¸¶¨ÎªNONE_OPTION_FUNC
-		-ÉùÃ÷Îª: int func_name(void);
-		-¶¨ÒåÎª:
+		è‹¥å¸Œæœ›ç»™ä¸€ä¸ª optionå¯¹è±¡æŒ‡å®šä¸€ä¸ªåŠŸèƒ½å‡½æ•°,è¯·ä»¥ä¸€ä¸‹æ ¼å¼ç¼–å†™è¯¥å‡½æ•°,è‹¥ä¸å¸Œæœ›æ‰§è¡Œä¸€ä¸ªåŠŸèƒ½å‡½æ•°ï¼Œè¯·åœ¨æ„é€ è¯¥optionå¯¹è±¡æ—¶å°†å…¶åŠŸèƒ½å‡½æ•°æŒ‡å®šä¸ºNONE_OPTION_FUNC
+		-å£°æ˜ä¸º: int func_name(void);
+		-å®šä¹‰ä¸º:
 		{
 
 			int func_name(void)
 			{
 				statements;
-				return NORMAL;//Èô·µ»ØÖµÎªTRUE ÔòÕı³£½áÊø ½øÈëÏÂÒ»¼¶²Ëµ¥
-				//Èô·µ»ØÖµÎªBACK Ôò·µ»ØÔ­²Ëµ¥
+				return NORMAL;//è‹¥è¿”å›å€¼ä¸ºTRUE åˆ™æ­£å¸¸ç»“æŸ è¿›å…¥ä¸‹ä¸€çº§èœå•
+				//è‹¥è¿”å›å€¼ä¸ºBACK åˆ™è¿”å›åŸèœå•
 			}
 			
 		}
@@ -44,52 +44,52 @@ DEMOËµÃ÷£º
 */
 #include "menu.h"
 #include <string.h>
-//É¾¼õ¸Ä²é
-int login() //½öÊµÏÖloginº¯Êı ¼ÙÉèÓĞÕËºÅ:admin ÃÜÂë:123456
+//åˆ å‡æ”¹æŸ¥
+int login() //ä»…å®ç°loginå‡½æ•° å‡è®¾æœ‰è´¦å·:admin å¯†ç :123456
 { 
 	char id[50];
 	char pw[50];
-	printf("\nÕËºÅ:");
+	printf("\nè´¦å·");
 	scanf_s("%s",id,50);
-	printf("\nÃÜÂë:");
+	printf("\nå¯†ç :");
 	scanf_s("%s",pw,50);
 	if(!strcmp(id,"admin") && !strcmp(pw,"123456"))
 	{
-		printf("\nµÇÂ¼³É¹¦");
+		printf("\nç™»å½•æˆåŠŸ");
 		return NORMAL;
 	}
 	else
 	{
-		printf("\nµÇÂ¼Ê§°Ü");
+		printf("\nç™»å½•å¤±è´¥");
 		return BACK;
 	}
 	
 }
-int logout() { return NORMAL; }//µÇÈëµÇ³ö	 [Î´ÊµÏÖ]
-int reg() { return NORMAL; }//×¢²á			[Î´ÊµÏÖ]
-int query() { return NORMAL; }//²é			[Î´ÊµÏÖ]
-int modify() { return NORMAL; }//¸Ä			[Î´ÊµÏÖ]
-int delete() { return NORMAL; }//É¾			[Î´ÊµÏÖ]
+int logout() { return NORMAL; }//ç™»å…¥ç™»å‡º	 [æœªå®ç°]
+int reg() { return NORMAL; }//æ³¨å†Œ			[æœªå®ç°]
+int query() { return NORMAL; }//æŸ¥			[æœªå®ç°]
+int modify() { return NORMAL; }//æ”¹			[æœªå®ç°]
+int delete() { return NORMAL; }//åˆ 			[æœªå®ç°]
 
 int main(int argc, char const *argv[])
 {
-    modify_system_speaker("<Í¼Êé¹ÜÀíÏµÍ³>");//´Ë´¦ĞŞ¸ÄÁËÏµÍ³ÌáÊ¾µÄ±êÊ¶
+    modify_system_speaker("<å›¾ä¹¦ç®¡ç†ç³»ç»Ÿ>");//æ­¤å¤„ä¿®æ”¹äº†ç³»ç»Ÿæç¤ºçš„æ ‡è¯†
 
     cOPTION gate_options[3] = {
-        mk_option("µÇÂ¼",login),
-        mk_option("×¢²á",reg),
-        mk_option("ÍË³ö",NONE_OPTION_FUNC)//´Ë´¦Îª²»ĞèÖ´ĞĞ¹¦ÄÜº¯ÊıµÄÇé¿ö
-        };//´Ë´¦¹¹ÔìÁËÒ»¸öÑ¡ÏîÁĞ±í
-    cMENU gate_menu = mk_menu("»¶Ó­Ê¹ÓÃÍ¼Êé¹ÜÀíÏµÍ³","Ìá¹© µÇÈë ×¢²áµÈ²Ù×÷",NULL,gate_options,3,FALSE);//´Ë´¦¹¹ÔìÁËmenu¶ÔÏógate_menu
+        mk_option("ç™»å½•",login),
+        mk_option("æ³¨å†Œ",reg),
+        mk_option("é€€å‡º",NONE_OPTION_FUNC)//æ­¤å¤„ä¸ºä¸éœ€æ‰§è¡ŒåŠŸèƒ½å‡½æ•°çš„æƒ…å†µ
+        };//æ­¤å¤„æ„é€ äº†ä¸€ä¸ªé€‰é¡¹åˆ—è¡¨
+    cMENU gate_menu = mk_menu("æ¬¢è¿ä½¿ç”¨å›¾ä¹¦ç®¡ç†ç³»ç»Ÿ","æä¾› ç™»å…¥ æ³¨å†Œç­‰æ“ä½œ",NULL,gate_options,3,FALSE);//æ­¤å¤„æ„é€ äº†menuå¯¹è±¡gate_menu
 
 	cOPTION op_options[3] =
 	{
-		mk_option("²éÑ¯",query),
-		mk_option("¸ü¸ÄÄ³Ìõ¼ÇÂ¼",modify),
-		mk_option("É¾È¥Ä³Ìõ¼ÇÂ¼",delete)
-	};//´Ë´¦¹¹ÔìÁËÒ»¸öÑ¡ÏîÁĞ±í
-	cMENU op_menu = mk_menu("²Ù×÷²Ëµ¥", "Ìá¹© É¾¼õ¸Ä ²Ù×÷", NULL, op_options, 3, TRUE);//´Ë´¦¹¹ÔìÁËmenu¶ÔÏóop_menu
-	link_menu2option(&gate_options[0], &op_menu);//´Ë´¦½« op_menuÖ¸¶¨Îªgate_menuµÄµÚÒ»¸öÑ¡ÏîµÄÏÂ¼¶²Ëµ¥
-	start(&gate_menu);//´Ë´¦Ö¸¶¨ÁËÒÔgate_menu×÷ÎªÆğÊ¼²Ëµ¥
+		mk_option("æŸ¥è¯¢",query),
+		mk_option("æ›´æ”¹æŸæ¡è®°å½•",modify),
+		mk_option("åˆ å»æŸæ¡è®°å½•",delete)
+	};//æ­¤å¤„æ„é€ äº†ä¸€ä¸ªé€‰é¡¹åˆ—è¡¨
+	cMENU op_menu = mk_menu("æ“ä½œèœå•", "æä¾› åˆ å‡æ”¹ æ“ä½œ", NULL, op_options, 3, TRUE);//æ­¤å¤„æ„é€ äº†menuå¯¹è±¡op_menu
+	link_menu2option(&gate_options[0], &op_menu);//æ­¤å¤„å°† op_menuæŒ‡å®šä¸ºgate_menuçš„ç¬¬ä¸€ä¸ªé€‰é¡¹çš„ä¸‹çº§èœå•
+	start(&gate_menu);//æ­¤å¤„æŒ‡å®šäº†ä»¥gate_menuä½œä¸ºèµ·å§‹èœå•
     return 0;
 }

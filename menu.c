@@ -43,15 +43,15 @@ error function_error = {"[FUNCTION ERROR]","[function error]:Unexpected returned
 
 /*****************************************************************************************************/
 extern int null_func(void){return 0;}
-extern int next_func(void){return 0;}//ÔÊĞíÖ±½ÓÌø×ªÖÁÏÂÒ»¸ö²Ëµ¥²¢ÏÔÊ¾
+extern int next_func(void){return 0;}//å…è®¸ç›´æ¥è·³è½¬è‡³ä¸‹ä¸€ä¸ªèœå•å¹¶æ˜¾ç¤º
 cOPTION end_option_token={END_OPTION_TEXT,&END_MENU,&END_MENU,END_OPTION_FUNC};
 cOPTION none_options_list[MAX_MENU_OPTION_NUM];
 cMENU NONE_MENU={"\0","\0",&NONE_MENU,none_options_list,MAX_MENU_OPTION_NUM};
-static char __system_speaker[50] = "<|ÏµÍ³ÌáÊ¾|>";//ÏµÍ³ÌáÊ¾×Ô³Æ£¬Ä¬ÈÏ<|ÏµÍ³ÌáÊ¾|>,¿ÉÊ¹ÓÃsystem_speaker(char[50])ĞŞ¸Ä
-static char __menu_remind[50] = "²Ëµ¥ËµÃ÷";
-static char __whether_remind[50] = "ÊÇ·ñÖØĞÂÊäÈë";
-static char __input_remind[50] = "ÇëÊäÈëÑ¡Ïî";
-static char __back_choice[50] = "·µ»ØÉÏ²ã²Ëµ¥";
+static char __system_speaker[50] = "<|ç³»ç»Ÿæç¤º|>";//ç³»ç»Ÿæç¤ºè‡ªç§°ï¼Œé»˜è®¤<|ç³»ç»Ÿæç¤º|>,å¯ä½¿ç”¨system_speaker(char[50])ä¿®æ”¹
+static char __menu_remind[50] = "èœå•è¯´æ˜";
+static char __whether_remind[50] = "æ˜¯å¦é‡æ–°è¾“å…¥";
+static char __input_remind[50] = "è¯·è¾“å…¥é€‰é¡¹:";
+static char __back_choice[50] = "è¿”å›ä¸Šå±‚èœå•";
 #define RAISE(error) printf("\n%s\n%s\nNote:%s",error.type,error.msg,error.note),system("pause")
 static STDCAL(int) get_choice(char *text,cMENU* menu);
 static STDCAL(int) execute_option();
@@ -106,9 +106,9 @@ static STDCAL(int) get_choice(char *text,cMENU* menu)
     menu_flush();
     scanf("%d",&choice); 
     if(choice<=menu->option_number && choice>=0 && menu->back_available==TRUE)
-        return choice;//ÔÊĞí·µ»ØÉÏ²ã²Ëµ¥
+        return choice;//å…è®¸è¿”å›ä¸Šå±‚èœå•
     else if (choice<=menu->option_number && choice>0 && menu->back_available==FALSE)
-        return choice;//²»ÔÊĞí·µ»ØÉÏ²ã²Ëµ¥
+        return choice;//ä¸å…è®¸è¿”å›ä¸Šå±‚èœå•
     else //error case
         {
             RAISE(choice_error);
@@ -124,7 +124,7 @@ static STDCAL(int) get_choice(char *text,cMENU* menu)
 				break;
 			case 'n':
 			case 'N':
-				printf_s("ÔİÊ±ÍË³ö³ÌĞò");
+				printf_s("æš‚æ—¶é€€å‡ºç¨‹åº");
 				system("exit");
 				break;
 			}
@@ -171,12 +171,12 @@ extern STDCAL(int) start(cMENU *menu)
     {
         display(menu);
         int choice = get_choice(__input_remind,menu)-1;
-        if (choice == -1)return BACK;//Îª·µ»ØÉÏ²ã²Ëµ¥
+        if (choice == -1)return BACK;//ä¸ºè¿”å›ä¸Šå±‚èœå•
 		cOPTION* option_choice = menu->options_list + choice;
 		if(execute_option(option_choice)==BACK)start(menu);
         system("pause");
         int value = start(option_choice->next_menu);
-        if (value == NORMAL)return NORMAL;//0Îª½áÊøÖµ
+        if (value == NORMAL)return NORMAL;//0ä¸ºç»“æŸå€¼
         else if (value == BACK)start(menu);
         else
         {
