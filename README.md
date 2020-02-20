@@ -86,7 +86,7 @@ cMENU menu = mk_menu("menu_title","menu_introduction",NULL,option_list,N,TRUE);
 * **cMENU** struct cMENU by `mk_menu`
 * **cOPTION** struct cOPTION by `mk_option`
 * **cOPTION[]** struct like this:
-```c
+``` c
 cOPTION option_list[N] = {
     mk_option,
     mk_option,...
