@@ -93,6 +93,9 @@ cOPTION option_list[N] = {
 }
 ```
 * `modify_system_speaker` If you want to modify the system self-call,you should use `modify_system_speaker(char*)` to modify.Then you will see system self_call like this `<system_self-call>.....`
+* `modify_menu_reminder` If you want to modify the menu remind style,you should use `modify_menu_reminder(char*)` to modify.Then you will see system self_call like this `menu-explain`
+* `modify_whether_remind` If you want to modify the whether rechoose reminder style,you should use `modify_whether_remind(char*)` to modify.Then you will see system self_call like this `whether input again`
+* `modify_back_choice` If you want to modify the back choice style,you should use `modify_back_choice(char*)` to modify.Then you will see system self_call like this `back to the parent menu`
 * `link_menu2option` If you want to struct a multi-layered menu, you should use `link_menu2option` to link menu to option. After the link operation , if you choose the option you linked, after the execution of option-function, the system will skip to the linked-menu.
 
 #### The option-function function standard

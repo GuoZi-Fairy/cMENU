@@ -57,9 +57,11 @@ extern int null_func(void);
 extern int next_func(void);
 extern cMENU none_menu_token;
 extern cOPTION end_option_token;
-extern char __system_speaker[50];//系统提示自称，默认<|系统提示|>,可使用system_speaker(char[50])修改
 extern STDCAL(cOPTION) mk_option(char *text,int (*func)(void));
 extern STDCAL(cMENU) mk_menu(char *name,char *text,cMENU *parent_menu,cOPTION *list,int num,boolean back_available);//list[11] = {option1,option2,option3,option4,...option10,END_OPTION}手动初始化
 extern STDCAL(void) modify_system_speaker(char *speaker_name);
+extern STDCAL(void) modify_menu_reminder(char *self_name);
+extern STDCAL(void) modify_whether_remind(char *self_name);
+extern STDCAL(void) modify_back_choice(char *self_name);
 extern STDCAL(void) link_menu2option(cOPTION *option_obj,cMENU *menu_obj);
 extern STDCAL(int) start(cMENU *menu);
