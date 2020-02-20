@@ -100,7 +100,7 @@ static STDCAL(int) get_choice(char *text,cMENU* menu)
     int choice = 0;
     printf("%s%s",system_speaker,text);
     menu_flush();
-    scanf_s("%d",&choice); 
+    scanf("%d",&choice); 
     if(choice<=menu->option_number && choice>=0 && menu->back_available==TRUE)
         return choice;//允许返回上层菜单
     else if (choice<=menu->option_number && choice>0 && menu->back_available==FALSE)
